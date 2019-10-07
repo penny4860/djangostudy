@@ -25,8 +25,9 @@ urlpatterns = [
 
 ### 4) view 구현
 
-views.py
+[views.py](views.py)
 
 ### 5. template 구현
 
-../templates/upload.html
+[upload.html](../templates/upload.html)
+
