@@ -1,7 +1,8 @@
 # FILE UPLOAD 앱
 
 * 질문
-
+* 참고자료
+	* https://docs.djangoproject.com/en/2.2/topics/http/file-uploads/#basic-file-uploads
 
 ## 1. 로직
 
@@ -26,6 +27,11 @@ urlpatterns = [
 ### 4) view 구현
 
 [views.py](views.py)
+
+* 뷰 함수 : ```def upload_file(request):```
+	* ```return render(request, 'upload.html', {'form': form, "contents": contents})```
+	* template 파일에 context를 dict 형으로 전달
+    	* template 에서는 ```{{form}}```, ```{{contents}}```으로 사용
 
 ### 5. template 구현
 
