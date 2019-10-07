@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from fileupload import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('upload/', views.upload_file, name='upload'),
 ]
+
+
+#     # Class-based views for Bookmark app
+#     path('bookmark/', BookmarkLV.as_view(), name='index'),
+#     path('bookmark/<int:pk>/', BookmarkDV.as_view(), name='detail'),
