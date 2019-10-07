@@ -1,3 +1,17 @@
 
-Hello upload.html
+<p> Hello upload.html </p>
+
+
+
+
+
+
+
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<p> {{ form.title }} </p>
+	<p> {{ form.file }} </p>
+	<button type="submit">Submit New Post</button>
+
+</form>
 
