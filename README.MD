@@ -1,64 +1,64 @@
 
-## Àå°í ±¸Çö°úÁ¤
+## ì¥ê³  êµ¬í˜„ê³¼ì •
 
-* Áú¹®
-	* urls.py¿¡¼­ »ç¿ëÇÏ´Â urlpattern ÀÌ¸§(path ÇÔ¼öÀÇ name ÆÄ¶ó¸ŞÅÍ)ÀÇ ¿ëµµ´Â?
-	* Generic View (FormView) ¿¡¼­ class methodÀÎ form_valid(form)·Î template¿¡ µ¥ÀÌÅÍ¸¦ ³Ñ±æ ¶§, template¿¡¼­ ÀÌ µ¥ÀÌÅÍ¸¦ ¹Ş´Â º¯¼öÀÌ¸§?
+* ì§ˆë¬¸
+	* urls.pyì—ì„œ ì‚¬ìš©í•˜ëŠ” urlpattern ì´ë¦„(path í•¨ìˆ˜ì˜ name íŒŒë¼ë©”í„°)ì˜ ìš©ë„ëŠ”?
+	* Generic View (FormView) ì—ì„œ class methodì¸ form_valid(form)ë¡œ templateì— ë°ì´í„°ë¥¼ ë„˜ê¸¸ ë•Œ, templateì—ì„œ ì´ ë°ì´í„°ë¥¼ ë°›ëŠ” ë³€ìˆ˜ì´ë¦„?
 		* {{form}} // {{object}} ?
-	* form classÀÇ ¿ªÇÒ? (solved)
-		* template¿¡ Àü´ŞÇÒ form data¸¦ ±â¼ú
+	* form classì˜ ì—­í• ? (solved)
+		* templateì— ì „ë‹¬í•  form dataë¥¼ ê¸°ìˆ 
 	
 
 
-### 1. skeleton ¸¸µé±â
+### 1. skeleton ë§Œë“¤ê¸°
 
-1) ÇÁ·ÎÁ§Æ® »ı¼º : startproject
-2) ÇÁ·ÎÁ§Æ® ¼³Á¤ÆÄÀÏ ¼öÁ¤ : settings.py
+1) í”„ë¡œì íŠ¸ ìƒì„± : startproject
+2) í”„ë¡œì íŠ¸ ì„¤ì •íŒŒì¼ ìˆ˜ì • : settings.py
     * DATABASES
     * TEMPLATES
-        * TEMPLATES['DIRS'] ¿¡ ÇÁ·ÎÁ§Æ® template fileÀ§Ä¡¸¦ ÁöÁ¤
+        * TEMPLATES['DIRS'] ì— í”„ë¡œì íŠ¸ template fileìœ„ì¹˜ë¥¼ ì§€ì •
     * static files
-        * STATICFILES_DIRS ¿¡ ÇÁ·ÎÁ§Æ® static fileÀ§Ä¡¸¦ ÁöÁ¤
+        * STATICFILES_DIRS ì— í”„ë¡œì íŠ¸ static fileìœ„ì¹˜ë¥¼ ì§€ì •
     * TIME_ZONE
-    * media °ü·Ã³»¿ë
+    * media ê´€ë ¨ë‚´ìš©
         * MEDIA_ROOT
     * INSTALLED_APPS
-        * »ç¿ëÇÒ ¾ÛÀ» µî·Ï
-3) ±âº» Å×ÀÌºí »ı¼º
+        * ì‚¬ìš©í•  ì•±ì„ ë“±ë¡
+3) ê¸°ë³¸ í…Œì´ë¸” ìƒì„±
     * python manage.py migrate
-4) °ü¸®ÀÚ»ı¼º
+4) ê´€ë¦¬ììƒì„±
     * python manage.py createsuperuser
-5) ¾Û»ı¼º
+5) ì•±ìƒì„±
     * python manage.py startapp bookmark
-6) ¾Ûµî·Ï : settings.py
+6) ì•±ë“±ë¡ : settings.py
 
 
-### 2. model ÄÚµù
+### 2. model ì½”ë”©
 
-* models.py : »ç¿ëÇÒ Å×ÀÌºí¿¡ µû¶ó model class ±¸Çö
-* admin.py : ±¸ÇöÇÑ model class ¸¦ admin site¿¡ µî·Ï
-* makemigrations : DB¿¡ ¹İ¿µ
-* migrate : Å×ÀÌºí »ı¼º
-* model ±¸Çö¹æ¹ı
+* models.py : ì‚¬ìš©í•  í…Œì´ë¸”ì— ë”°ë¼ model class êµ¬í˜„
+* admin.py : êµ¬í˜„í•œ model class ë¥¼ admin siteì— ë“±ë¡
+* makemigrations : DBì— ë°˜ì˜
+* migrate : í…Œì´ë¸” ìƒì„±
+* model êµ¬í˜„ë°©ë²•
 	* [Model](Model.MD)
 
-### 3. URLConf ±¸Çö
+### 3. URLConf êµ¬í˜„
 
-* urls.py : URL Á¤ÀÇ
+* urls.py : URL ì •ì˜
 
 
-### 4. view ±¸Çö
+### 4. view êµ¬í˜„
 
-* views.py : ·ÎÁ÷ ÀÛ¼º
-* generic view ±¸Çö¹æ¹ı
+* views.py : ë¡œì§ ì‘ì„±
+* generic view êµ¬í˜„ë°©ë²•
 	* [View](View.MD)
 
 
-### 5. template ±¸Çö
+### 5. template êµ¬í˜„
 
-* app/templates µğ·ºÅä¸®
-* template ±¸Çö¹æ¹ı
+* app/templates ë””ë ‰í† ë¦¬
+* template êµ¬í˜„ë°©ë²•
 	* [Template](Template.MD)
-	* [Index page ±¸Çö ¹æ¹ı](IndexTemplate.MD)
+	* [Index page êµ¬í˜„ ë°©ë²•](IndexTemplate.MD)
 
 
