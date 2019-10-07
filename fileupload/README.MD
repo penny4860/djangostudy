@@ -1,6 +1,9 @@
 # FILE UPLOAD 앱
 
 * 질문
+	* template 파일을 앱별로 나누자
+	* 업로드한 텍스트 파일을 저장하고 읽는 방식이 아니라, 메모리에서 바로 읽을 수 없을까?
+		* [views.py](views.py) 에서 handle_uploaded_file()
 * 참고자료
 	* https://docs.djangoproject.com/en/2.2/topics/http/file-uploads/#basic-file-uploads
 
