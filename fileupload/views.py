@@ -12,6 +12,10 @@ def handle_uploaded_file(f):
     with open('tmp.txt', 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
+    ff = open("tmp.txt", 'r')
+    data = ff.read()
+    ff.close()
+    return data
 
 def upload_file(request):
     if request.method == 'POST':
@@ -21,8 +25,10 @@ def upload_file(request):
         # print("==============================================================")
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
-            handle_uploaded_file(request.FILES['file'])
+            contents = handle_uploaded_file(request.FILES['file'])
+            # print(contents)
             # return HttpResponseRedirect('/success/url/')
     else:
         form = UploadFileForm()
-    return render(request, 'upload.html', {'form': form})
+        contents = "Nothing"
+    return render(request, 'upload.html', {'form': form, "contents": contents})
