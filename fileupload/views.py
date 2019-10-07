@@ -15,16 +15,14 @@ def handle_uploaded_file(f):
 
 def upload_file(request):
     if request.method == 'POST':
+        # print("upload_file(request):=========================================")
+        # print(request.FILES)
+        # print(request.FILES['file'])
+        # print("==============================================================")
         form = UploadFileForm(request.POST, request.FILES)
-        
-        print("upload_file(request):=========================================")
-        print(request.FILES['title'])
-        print(request.FILES['file'])
-        print("==============================================================")
-        
         if form.is_valid():
             handle_uploaded_file(request.FILES['file'])
-            return HttpResponseRedirect('/success/url/')
+            # return HttpResponseRedirect('/success/url/')
     else:
         form = UploadFileForm()
     return render(request, 'upload.html', {'form': form})
