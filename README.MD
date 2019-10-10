@@ -2,12 +2,19 @@
 ## 장고 구현과정
 
 * 질문
+	* django rest framework는 장고에서 웹 API구축을 도와준다고 함.
+		* 웹 API란?
+			* 웹 앱과 웹 API의 차이점?
+		* API endpoint?
+		* https://medium.com/@dydrlaks/rest-api-3e424716bab 
 	* urls.py에서 사용하는 urlpattern 이름(path 함수의 name 파라메터)의 용도는?
 	* Generic View (FormView) 에서 class method인 form_valid(form)로 template에 데이터를 넘길 때, template에서 이 데이터를 받는 변수이름?
 		* {{form}} // {{object}} ?
 	* form class의 역할? (solved)
-		* template에 전달할 form data를 기술
-	
+		* template에 전달할 form data를 기술	
+		
+* Todo
+	* django rest framework + keras를 이용한 웹 API 구현소스코드 리뷰
 
 
 ### 1. skeleton 만들기
