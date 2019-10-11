@@ -46,7 +46,7 @@
 * makemigrations : DB에 반영
 * migrate : 테이블 생성
 * model 구현방법
-	* [Model](Model.MD)
+	* [Model](docs/Model.MD)
 
 ### 3. URLConf 구현
 
@@ -57,14 +57,14 @@
 
 * views.py : 로직 작성
 * generic view 구현방법
-	* [View](View.MD)
+	* [View](docs/View.MD)
 
 
 ### 5. template 구현
 
 * app/templates 디렉토리
 * template 구현방법
-	* [Template](Template.MD)
-	* [Index page 구현 방법](IndexTemplate.MD)
+	* [Template](docs/Template.MD)
+	* [Index page 구현 방법](docs/IndexTemplate.MD)
 
 
