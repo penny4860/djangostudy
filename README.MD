@@ -1,5 +1,5 @@
 
-## 장고 구현과정
+## Note
 
 * 질문
 	* django rest framework는 장고에서 웹 API구축을 도와준다고 함.
@@ -17,6 +17,7 @@
 	* django rest framework + keras를 이용한 웹 API 구현소스코드 리뷰
 		* https://medium.com/@att288/deploy-multiple-keras-models-in-django-project-e3b34ed23cbb
 
+## 장고 구현과정
 
 ### 1. skeleton 만들기
 
