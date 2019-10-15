@@ -51,7 +51,12 @@
 ### 3. URLConf 구현
 
 * urls.py : URL 정의
-
+* ```root/project/urls.py```
+	* ```path('snippets/', include('snippets.urls')),```
+	* app/urls.py에서 정의한 경로를 포함
+* ```root/app/urls.py```
+	* ```path('', views.snippet_list), # snippets/```
+	* ```path('<int:pk>/', views.snippet_detail), # snippets/1/```
 
 ### 4. view 구현
 
