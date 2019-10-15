@@ -31,3 +31,12 @@ class SnippetSerializer(serializers.Serializer):
         instance.save()
         return instance
 
+
+# ModelSerializer를 쓰면 아래코드처럼된다.
+# 질문 : 모델과 연결시키지 않고 임시파일 (이미지파일)을 입력받으려면 어떻게 하지?
+#class SnippetSerializer(serializers.ModelSerializer):
+#    class Meta:
+#        model = Snippet
+#        fields = ['id', 'title', 'code', 'linenos', 'language', 'style']
+
+
