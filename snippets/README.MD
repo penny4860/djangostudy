@@ -36,9 +36,12 @@
 			3) request.method에 따라 분기
 			4) 함수 output : JsonResponse() 객체
 				* serializer.data를 포함
-	* django restframework 기능을 사용
-		* api_view 데코레이터 사용
-		
+	* django restframework : api_view 데코레이터 사용
+		1) ```@api_view``` 데코레이터 사용
+		2) HttpRequest -> Request 객체가 입력
+		3) JsonResponse -> Response 객체를 리턴
+		4) Response 객체의 status를 interger 대신 status 모듈에 정의되어있는 코드를 사용
+
 
 ```
 # django web application의 뷰

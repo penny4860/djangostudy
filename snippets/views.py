@@ -30,25 +30,23 @@ from rest_framework.response import Response
 # 1. @api_view 데코레이터 사용
 @api_view(['GET', 'POST'])
 def snippet_list(request):
+    # 2. HttpRequest -> Request 객체가 입력
     if request.method == 'GET':
         snippets = Snippet.objects.all()
         serializer = SnippetSerializer(snippets, many=True)
-        # 2. JsonResponse 대신 Response 객체를 리턴
+        # 3. JsonResponse -> Response 객체를 리턴
         return Response(serializer.data)
     elif request.method == 'POST':
         serializer = SnippetSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        # 3. status를 interger 대신 status 모듈에 정의되어있는 코드를 사용
+        # 4. status를 interger 대신 status 모듈에 정의되어있는 코드를 사용
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+"""
 @csrf_exempt
 def snippet_detail(request, pk):
-    """
-    Retrieve, update or delete a code snippet.
-    """
     try:
         snippet = Snippet.objects.get(pk=pk)
     except Snippet.DoesNotExist:
@@ -69,3 +67,26 @@ def snippet_detail(request, pk):
     elif request.method == 'DELETE':
         snippet.delete()
         return HttpResponse(status=204)
+"""
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def snippet_detail(request, pk):
+    try:
+        snippet = Snippet.objects.get(pk=pk)
+    except Snippet.DoesNotExist:
+        # 3. HttpResponse -> Response
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = SnippetSerializer(snippet)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = SnippetSerializer(snippet, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        snippet.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
