@@ -9,6 +9,9 @@
 		* template에 전달할 form data를 기술	
 	* API endpoint? (solved)
 		* [rest](docs/rest.MD)
+	* djangro rest framework
+		* rest API로 구현했을때 web browser로 테이블에 데이터 추가는 못하나? (view함수의 request.POST로 타는 방법)
+		* model serializer 말고 일반 serializer 사용법?
 		
 * Todo
 	* django rest framework + keras를 이용한 웹 API 구현소스코드 리뷰

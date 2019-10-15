@@ -1,10 +1,6 @@
 
 # Django Restframework Tutorial
 
-* 질문
-	* rest API로 구현했을때 테이블에 데이터 추가는 못하나?
-	* model serializer 말고 일반 serializer 사용법?
-
 ## 구현과정
 
 ### 2. model 코딩
