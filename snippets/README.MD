@@ -26,6 +26,13 @@
 	* restful API
 		* JsonResponse 객체를 리턴 (template은 구현할 필요 없음)
 
+* restful API의 뷰함수 구현방법
+	1) @csrf_exempt 데코레이터
+	2) 함수 input : request
+	3) request.method에 따라 분기
+	4) 함수 output : JsonResponse() 객체
+		* serializer.data를 포함
+
 ```
 # django web application의 뷰
 # HttpResponse 객체를 리턴
