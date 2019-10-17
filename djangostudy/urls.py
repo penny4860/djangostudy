@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', views.upload_file, name='upload'),
     path('snippets/', include('snippets.urls')),
+    path('imgsize/', include('imgsize.urls')),
 ]
 
 
