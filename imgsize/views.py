@@ -20,15 +20,15 @@ def get_imgsize(request):
         else: # URL is provided by the user
             url_provided = request.POST.get("url", None)
             if url_provided is None:
-                serializer = ResponseSerializer(ResponseInfo())
-                return JsonResponse(serializer.data)
+                response_info = ResponseInfo()
             image = read_image(url = url_provided)
         h, w, _ = image.shape
-        serializer = ResponseSerializer(ResponseInfo(height=h, width=w))
-        return JsonResponse(serializer.data)
-    elif request.method == "GET":
-        serializer = ResponseSerializer(ResponseInfo())
-        return JsonResponse(serializer.data)
+        response_info = ResponseInfo(height=h, width=w)
+    else:
+        response_info = ResponseInfo()
+
+    serializer = ResponseSerializer(response_info)
+    return JsonResponse(serializer.data)
         
 
 def read_image(path=None, stream=None, url=None):
