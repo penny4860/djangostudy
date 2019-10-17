@@ -1,24 +1,26 @@
 import numpy as np
 import urllib
 import cv2
-from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
 
 from .serializers import ResponseSerializer, ResponseInfo
+from rest_framework.response import Response
 
 
 # start off with defining a function to detect the URL requested which has the image for facial recognition
-@csrf_exempt
+
+from rest_framework.decorators import api_view
+
+@api_view(['GET', 'POST'])
 def get_imgsize(request):
 
     ## between GET or POST, we go with Post request and check for https
     if request.method == "POST":
         
-        img_file = request.POST.get("file", None)
+        img_file = request.data["file"]
         if img_file is not None:
             image = read_image(path=img_file)
         else: # URL is provided by the user
-            url_provided = request.POST.get("url", None)
+            url_provided = request.data["url"]
             if url_provided is None:
                 response_info = ResponseInfo()
             image = read_image(url = url_provided)
@@ -28,7 +30,7 @@ def get_imgsize(request):
         response_info = ResponseInfo()
 
     serializer = ResponseSerializer(response_info)
-    return JsonResponse(serializer.data)
+    return Response(serializer.data)
         
 
 def read_image(path=None, stream=None, url=None):
