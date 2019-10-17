@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'snippets.apps.SnippetsConfig',
     'fileupload.apps.FileuploadConfig',
-    
+    'imgsize.apps.ImgsizeConfig',
 ]
 
 MIDDLEWARE = [
