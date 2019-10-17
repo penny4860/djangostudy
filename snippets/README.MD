@@ -43,6 +43,15 @@
 3) django restframework : api_view() 데코레이터 사용
 	* 장점 
 		* browserble API를 사용할 수 있다. : 브라우저에서 http get/post를 조절해서 테스트할 수 있음.
+			* ```django-project> http --form POST http://127.0.0.1:8000/imgsize/ file="1.png"```
+			* web-browser에서 content에 ```{"file" : "1.png"}```를 입력
+	* 수정사항
+		1) api_view 데코레이터로 뷰함수를 감싼다.
+			* ```@api_view(['GET', 'POST'])```
+		2) 함수입력
+			* HttpRequest 객체 -> Request 객체
+		3) 함수출력
+			* JsonResponse 객체 -> Response 객체
 
 ## restful API 구현과정
 
