@@ -3,11 +3,41 @@
 
 ## 질문
 
-* rest API로 구현했을때 web browser로 테이블에 데이터 추가는 못하나? (view함수의 request.POST로 타는 방법)
-* model serializer 말고 일반 serializer 사용법?
-* http method 중 PUT / POST의 차이점
+### 1. Solved
 
-## 구현과정
+* http method 중 PUT / POST의 차이점
+	* POST : client 에서 리소스의 위치를 명시
+	* PUT : client 에서 리소스의 위치를 지정하지 않음.
+* rest API로 구현했을때 web browser로 테이블에 데이터 추가는 못하나? (view함수의 request.POST로 타는 방법)
+	* command line에서 httpie 설치하고 http 명령어를 쓸수 있음.
+	* 예시) : ```http --form POST http://127.0.0.1:8000/snippets/ code="print(123)"```
+* django api에서 client server간 데이터 통신 방법
+	* 클라이언트 command
+		* ```http --form POST http://127.0.0.1:8000/imgsize/ file="tmp.jpg"```
+	* 장고서버
+		* django view 함수에서 request.POST["file"]로 클라이언트에서 전송한 데이터를 받을 수 있음.
+
+### 2. Working on
+
+* api_view() 를 사용한 뷰함수 구현시, image file upload를 브라우져에서 하는 방법
+* api_root는 왜 만드는거지?
+* urls.py에서 router를 사용하는 이유? 장점?
+	* 뷰셋을 사용하지 않으면 router를 사용하지 않아도 되는건가?
+	* HTTP method, action에 대해서 다양한 동작을 정의할 수 있는듯.
+		* 맞는지 모르겠음.
+
+## restful API 구현방법
+
+1) django 만을 사용
+	* 뷰함수에서 JsonResponse 객체를 리턴
+2) django restframework : serializer 사용
+	* JsonResponse 객체에 데이터를 넘길때 serializer기능을 사용
+	* 뷰함수에서 JsonResponse 객체를 리턴
+3) django restframework : api_view() 데코레이터 사용
+	* 장점 
+		* browserble API를 사용할 수 있다. : 브라우저에서 http get/post를 조절해서 테스트할 수 있음.
+
+## restful API 구현과정
 
 ### 2. model 코딩
 
