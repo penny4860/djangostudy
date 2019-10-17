@@ -31,8 +31,15 @@
 1) django 만을 사용
 	* 뷰함수에서 JsonResponse 객체를 리턴
 2) django restframework : serializer 사용
-	* JsonResponse 객체에 데이터를 넘길때 serializer기능을 사용
-	* 뷰함수에서 JsonResponse 객체를 리턴
+	* Serialize 클래스 구현
+		* ```ResponseInfo```
+		* ```ResponseSerializer```
+	* 뷰함수 구현
+		1) ```ResponseInfo``` 객체를 생성
+		2) ```ResponseSerializer``` 객체로 wrapping
+			* ```serializer = ResponseSerializer(response_info)```
+		3) JsonResponse 객체를 리턴
+			* ```return JsonResponse(serializer.data)``` 
 3) django restframework : api_view() 데코레이터 사용
 	* 장점 
 		* browserble API를 사용할 수 있다. : 브라우저에서 http get/post를 조절해서 테스트할 수 있음.
