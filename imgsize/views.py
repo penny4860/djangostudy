@@ -13,9 +13,10 @@ def get_imgsize(request):
 
     ## between GET or POST, we go with Post request and check for https
     if request.method == "POST":
-        if request.FILES.get("image", None) is not None:
-            image = read_image(stream = request.FILES["image"])
-
+        
+        img_file = request.POST.get("file", None)
+        if img_file is not None:
+            image = read_image(path=img_file)
         else: # URL is provided by the user
             url_provided = request.POST.get("url", None)
             if url_provided is None:
