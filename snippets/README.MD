@@ -16,15 +16,16 @@
 		* ```http --form POST http://127.0.0.1:8000/imgsize/ file="tmp.jpg"```
 	* 장고서버
 		* django view 함수에서 request.POST["file"]로 클라이언트에서 전송한 데이터를 받을 수 있음.
+* api_root는 왜 만드는거지?
+	* api_root 페이지에서 다른 api로의 링크를 구현해서 제공
+* api_view() 를 사용한 뷰함수 구현시, image file upload를 브라우져에서 하는 방법
+	* generic view ```from rest_framework import generics``` 에 있는 클래스 사용시 브라우져에서 각 field를 입력할 수 있음.
+* urls.py에서 router를 사용하는 이유? 장점?
+	* url 주소를 편하게 지정할 수 있음
+
 
 ### 2. Working on
 
-* api_view() 를 사용한 뷰함수 구현시, image file upload를 브라우져에서 하는 방법
-* api_root는 왜 만드는거지?
-* urls.py에서 router를 사용하는 이유? 장점?
-	* 뷰셋을 사용하지 않으면 router를 사용하지 않아도 되는건가?
-	* HTTP method, action에 대해서 다양한 동작을 정의할 수 있는듯.
-		* 맞는지 모르겠음.
 
 ## restful API 구현방법
 
