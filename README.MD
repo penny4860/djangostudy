@@ -14,8 +14,7 @@
 		* [rest](docs/rest.MD)
 		
 * Todo
-	* django rest framework + keras를 이용한 웹 API 구현소스코드 리뷰
-		* https://medium.com/@att288/deploy-multiple-keras-models-in-django-project-e3b34ed23cbb
+
 
 ## 장고 구현과정
 
